@@ -1,0 +1,127 @@
+* {
+    font-size: 20px;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: 'Raleway', sans-serif;
+    
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border: none;
+    flex-direction: column;
+
+}
+
+.container > .chat-container{
+    width: 50%;
+    height: 75%;
+    max-height: 75%;
+    max-width: 50%;
+    background: rgb(2,0,36);
+    background: linear-gradient(25deg, rgba(2,0,36,1) 0%, rgba(9,41,121,0.9500175070028011) 0%, rgba(0,212,255,1) 100%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.container > .chat-container > form  {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-bottom: 5px;
+}
+
+.container > .chat-container > span  {
+    display: fixed;
+}
+
+.container > .chat-container > .messageform > input {
+    border-radius: 5px;
+    padding: 5px;
+    width: 85%;
+    border: 0px solid transparent;
+    margin-right: 5px;
+    outline:none;
+}
+
+.container > .chat-container > .messageform > .divButton {
+    display: flex;
+    border-radius: 50%;
+    width: 2rem;
+    height: auto;
+    background-color: transparent;
+    border:none;
+}
+.container > .chat-container > .messageform > .divButton > svg {
+    fill: white;
+}
+
+.container > .chat-container > .messageform > .divButton > svg:hover {
+    fill: white;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    font-weight: bold;
+}
+
+.chat-box > .message-left {
+    align-self: flex-start;
+    background: white;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+    max-width: 30rem;
+    width: auto;
+    height: auto;
+    margin: 1rem 0 1rem 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.chat-box > .message-right {
+    align-self: flex-end;
+    background: white;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+    width: auto;
+    margin: 1rem 0 1rem 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.room-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.room-container > span{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

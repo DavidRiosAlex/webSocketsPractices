@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <form id="room-container" class="room-container">
+                <span>nickname: 
+                    <input autocomplete="off" type="text" id="nickname" style="outline:none;border:1px solid grey;border-radius: 5px;"></input>
+                </span>
+                <span>room: 
+                    <input autocomplete="off" type="text" id="room" style="outline:none;border:1px solid grey;border-radius: 5px;"></input>
+                </span>
+                <span><button id="joinroom">Entrar</button></span>
+            </form>
+            <div id="messages" class="chat-box">
+            </div>
+            <form id="messageform" class="messageform">
+                <input placeholder="message" name="messageBox" id="messageBox" autocomplete="off">
+                <button class="divButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>    
+</body>
+</html>
