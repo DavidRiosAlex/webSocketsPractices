@@ -4,11 +4,6 @@ const http = require('http');
 const express = require('express');
 const path = require('path');
 
-// to connect to mongodb username is web_sockets_user_dar  password: web-sockets-pass-dar
-
-// mongodb uri: mongodb+srv://web_sockets_user_dar:web-sockets-pass-dar@cluster0.uzr3d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-// mongodb uri: mongodb+srv://web_sockets_user_dar:web-sockets-pass-dar@cluster0.uzr3d.mongodb.net/test
-
 const app = express();
 const users = {
     David: 'room1'
