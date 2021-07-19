@@ -1,0 +1,13 @@
+FROM node:14-alpine
+
+WORKDIR /srv/api/
+
+COPY ./server/src/index.js .
+COPY ./server/babel.config.json .
+COPY ./server/package*.json .
+
+
+RUN npm install -g nodemon
+RUN npm install
+
+CMD npm run dev

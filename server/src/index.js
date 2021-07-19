@@ -1,8 +1,8 @@
-'use strict';
-
-const http = require('http');
-const express = require('express');
-const path = require('path');
+import http from 'http';
+import express from 'express';
+import path from 'path';
+import socketio from 'socket.io';
+import mongoose from 'mongoose';
 
 const app = express();
 const users = {
@@ -12,7 +12,7 @@ const users = {
 app.use(express.static(path.join(__dirname, 'client')));
 const server = http.createServer(app);
 
-const io = require('socket.io')(server, {
+const io = socketio(server, {
     cors: { origin: 'http://localhost:8080' }
 });
 

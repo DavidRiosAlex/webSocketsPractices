@@ -1,0 +1,36 @@
+version: '3'
+services:
+    chat_api:
+        container_name: chat_api
+        build: 
+            context: .
+            dockerfile: server/dockerfile.server
+            args:
+                port: "8080"
+        volumes:
+            - ./server/src/index.js:/srv/api/index.js
+        ports:
+            - "8080:8080"
+        env_file:
+            - ./server/.env
+        networks:
+            - chat_network
+    # chat_client:
+    #     container_name: chat_client
+    #     build: 
+    #         context: .
+    #         dockerfile: dockerfile.client
+    #         args:
+    #             port: "3000"
+    #     volumes:
+    #         - ./chat.io/:/srv/client/
+    #     ports:
+    #         - "3000:3000"
+    #     env_file:
+    #         - ./chat.io/.env
+    #     networks:
+    #         - chat_network
+
+networks:
+    chat_network:
+        driver: bridge
