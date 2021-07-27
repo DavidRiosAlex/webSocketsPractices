@@ -1,35 +1,41 @@
 version: '3'
 services:
-    chat_api:
-        container_name: chat_api
-        build: 
-            context: .
-            dockerfile: server/dockerfile.server
-            args:
-                port: "8080"
-        volumes:
-            - ./server/src/index.js:/srv/api/index.js
-        ports:
-            - "8080:8080"
-        env_file:
-            - ./server/.env
-        networks:
-            - chat_network
-    # chat_client:
-    #     container_name: chat_client
+    # chat_api:
+    #     container_name: chat_api
     #     build: 
     #         context: .
-    #         dockerfile: dockerfile.client
+    #         dockerfile: server/dockerfile.server
     #         args:
-    #             port: "3000"
+    #             port: "8080"
     #     volumes:
-    #         - ./chat.io/:/srv/client/
+    #         - ./server/src/index.js:/srv/api/index.js
     #     ports:
-    #         - "3000:3000"
+    #         - "8080:8080"
     #     env_file:
-    #         - ./chat.io/.env
+    #         - ./server/.env
     #     networks:
     #         - chat_network
+    chat_client:
+        container_name: chat_client
+        build: 
+            context: .
+            dockerfile: ./chat-io/dockerfile.client
+            args:
+                port: "3001"
+        volumes:
+            - ./chat-io/models:/srv/api/models
+            - ./chat-io/pages/:/srv/api/pages/
+            - ./chat-io/public/:/srv/api/public/
+            - ./chat-io/styles/:/srv/api/styles/
+            - ./chat-io/.eslintrc:/srv/api/.eslintrc
+            - ./chat-io/next.config.js:/srv/api/next.config.js
+            - ./chat-io/.next/:/srv/api/.next/
+        ports:
+            - "3001:3001"
+        env_file:
+            - ./chat-io/.env
+        networks:
+            - chat_network
 
 networks:
     chat_network:

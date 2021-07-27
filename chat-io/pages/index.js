@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { Label } from './Components';
+// import mongoose from 'mongoose';
 
 export default function Home() {
   return (

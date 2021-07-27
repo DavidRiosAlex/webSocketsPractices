@@ -1,0 +1,17 @@
+FROM node:14-alpine
+
+WORKDIR /srv/api/
+
+COPY ./chat-io/pages/ .
+COPY ./chat-io/public/ .
+COPY ./chat-io/models/ .
+COPY ./chat-io/styles/ .
+COPY ./chat-io/.next/ .
+COPY ./chat-io/.eslintrc .
+COPY ./chat-io/next.config.js .
+COPY ./chat-io/package*.json .
+
+RUN npm install -g nodemon
+RUN npm install
+
+CMD npm run dev
